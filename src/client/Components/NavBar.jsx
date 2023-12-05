@@ -5,8 +5,8 @@ const NavBar = () => {
 
     return (
         <div>
-            <Link to='/'><p>add</p></Link>
-            <Link to='/retrieve'><p>retrieve</p></Link>
+            <Link to='/'><button>add</button></Link>
+            <Link to='/retrieve'><button>retrieve</button></Link>
         </div>
     )
 }
