@@ -1,9 +1,14 @@
 import React from 'react';
+import Maincontainer from './Containers/MainContainer';
 
 const App = () => {
     return (
         //render a container
-        <h1>TechStackr</h1>
+        <div>
+            <h1>TechStackr</h1>
+            <Maincontainer />
+        </div>
+
     )
 }
 
