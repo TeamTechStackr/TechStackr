@@ -18,7 +18,7 @@ app.use(express.json());
 // app.use(express.static(path.resolve(__dirname, '../src')));
 
 //handles post request
-app.post('/addProject', dbController.addProject, (req, res, next) => {
+app.post('/addProject', dbController.addProject, dbController.addTechnologies, dbController.addProjectTechnologies, (req, res, next) => {
     return res.status(200).json('records added (maybe, who knows)')
 });
 
