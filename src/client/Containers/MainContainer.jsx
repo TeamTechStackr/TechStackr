@@ -15,8 +15,8 @@ const Maincontainer = () => {
             <Router>
                 <NavBar/>
                 <Routes>
+                    <Route path='/retrieve' element={<RetrieveDisplay/>}/>
                    <Route path='/' element={<AddDisplay/>}/>
-                   <Route path='/' element={<RetrieveDisplay/>}/>
                 </Routes>
             </Router>
 
