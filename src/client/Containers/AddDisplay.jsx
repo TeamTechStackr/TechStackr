@@ -10,6 +10,23 @@ const AddDisplay = () => {
       techsArr[i] = techsArr[i].trim();
     }
     console.log(name, link, techsArr);
+    fetch('/addProject', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        ghLink: link,
+        technologies: techsArr
+      })
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
   };
 
   return (
