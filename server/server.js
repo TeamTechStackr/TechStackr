@@ -15,7 +15,7 @@ app.use(express.json());
 //     allowedHeaders: ['Content-Type', 'Authorization']
 // }));
 
-// app.use(express.static(path.resolve(__dirname, '../src')));
+app.use(express.static(path.resolve(__dirname, '../src')));
 
 //handles post request
 app.post(
