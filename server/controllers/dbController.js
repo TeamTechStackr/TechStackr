@@ -8,6 +8,7 @@ dbController.addProject = (req, res, next) => {
   db.query(query)
     .then((data) => {
       console.log(data)
+      return next();
     })
       .catch((err) => {
           console.log(err);

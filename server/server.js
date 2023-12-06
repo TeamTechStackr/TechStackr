@@ -25,7 +25,7 @@ app.post('/api/test', (req, res) => {
 })
 
 //handles post request
-app.post('/addProject', (req, res, next) => {
+app.post('/addProject', dbController.addProject, (req, res, next) => {
     return res.status(200).json('project added (maybe, who knows)')
 });
 
