@@ -24,6 +24,8 @@ app.post(
   dbController.addTechnologies,
   dbController.addProjectTechnologies,
   (req, res, next) => {
+    
+    console.log("req.body", req.body)
     return res.status(200).json('records added (maybe, who knows)');
   },
 );
