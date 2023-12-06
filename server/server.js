@@ -6,8 +6,6 @@ const app = express();
 const PORT = 3000;
 const dbController = require('./controllers/dbController');
 
-console.log('server reached')
-
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -19,14 +17,9 @@ app.use(express.json());
 
 // app.use(express.static(path.resolve(__dirname, '../src')));
 
-app.post('/api/test', (req, res) => {
-  console.log('test successful')
-  res.status(200).send('test was successful')
-})
-
 //handles post request
-app.post('/addProject', dbController.addProject, (req, res, next) => {
-    return res.status(200).json('project added (maybe, who knows)')
+app.post('/addProject', dbController.addProject, dbController.addTechnologies, dbController.addProjectTechnologies, (req, res, next) => {
+    return res.status(200).json('records added (maybe, who knows)')
 });
 
 //handles get request
