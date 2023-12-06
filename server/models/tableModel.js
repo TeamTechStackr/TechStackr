@@ -1,0 +1,14 @@
+require('dotenv').config();
+const { Pool } = require('pg');
+
+const URI = process.env.DBURI;
+const pool = new Pool({
+  connectionString: URI
+});
+
+module.exports = {
+  query: (text ,params, callback) => {
+    console.log('executed query', text);
+    return pool.query(text, params, callback);
+  }
+};
