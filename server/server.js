@@ -1,27 +1,42 @@
 const exp = require('constants');
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
+const dbController = require('./controllers/dbController');
 
 console.log('server reached')
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+// app.use(cors({
+//     origin: 'http://localhost:8080',
+//     methods: ['GET', 'POST'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+
+// app.use(express.static(path.resolve(__dirname, '../src')));
+
+app.post('/api/test', (req, res) => {
+  console.log('test successful')
+  res.status(200).send('test was successful')
+})
+
 //handles post request
 app.post('/addProject', (req, res, next) => {
-    
-})
+    return res.status(200).json('project added (maybe, who knows)')
+});
 
 //handles get request
 app.get('/getProjects', (req, res, next) => {
     
-})
+});
 
 //handle unknown routes
 app.use((req, res) => {
-    res.status(404).send();
+    res.status(404).send('page was not found!!!!!!!');
 });
 
 //global error handler
